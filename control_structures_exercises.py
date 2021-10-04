@@ -87,6 +87,46 @@ for i in range(1, 10):
 #        Use a loop and the continue statement to output all the odd numbers between 1 and 50, 
 #        except for the number the user entered.
 user_num_input = input('Please enter an odd number between 1 and 50:')
-while user_num_input.isdigit() != True:
-    print('Invalid input')
-    user_num_input = input('Please enter an odd number between 1 and 50:')
+while True:
+    if user_num_input.isdigit() != True:
+        print('Invalid input')
+        user_num_input = input('Please enter an odd number between 1 and 50:')
+        continue
+    elif int(user_num_input) not in range(1, 51, 2):
+        print('Invalid input')
+        user_num_input = input('Please enter an odd number between 1 and 50:')
+    else: break
+for i in range(1, 51):
+    if i % 2 == 0:
+        continue
+    elif i == int(user_num_input):
+        continue
+    else:
+        print('Here is an odd number:', i)
+
+# The input function can be used to prompt for input and use that input in your python code. 
+
+# Prompt the user to enter a positive number and write a loop that counts from 0 to that number. 
+# (Hints: first make sure that the value the user entered is a valid number, 
+# also note that the input function returns a string, so you'll need to convert this to a numeric type.)
+user_pos_input = input('Please enter a number between 1 and 50: ')
+while True:
+    if user_pos_input.isdigit() != True:
+        print('Invalid input')
+        user_pos_input = input('Please enter a number between 1 and 50:')
+        continue
+    elif int(user_pos_input) <= 0:
+        print('Invalid input')
+        user_pos_input = input('Please enter a number between 1 and 50:')
+    elif int(user_pos_input) > 50:
+        print('Invalid input')
+        user_pos_input = input('Please enter a number between 1 and 50:')
+    else:
+        break
+for n in range(-1, int(user_pos_input)):
+    n = n + 1
+    print(n)
+
+
+# Write a program that prompts the user for a positive integer. 
+# Next write a loop that prints out the numbers from the number the user entered down to 1.
