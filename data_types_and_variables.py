@@ -28,7 +28,10 @@ print('The total cost will be $' + str(total_cost))
 google_wage = 400
 amazon_wage = 380
 facebook_wage = 350
-total_payment = (10 * facebook_wage) + (6 * google_wage) + (4 * amazon_wage)
+google_hours = 6
+amazon_hours = 4
+facebook_hours = 10
+total_payment = (facebook_hours * facebook_wage) + (google_hours * google_wage) + (amazon_hours * amazon_wage)
 print('This week\'s payment will be $' + str(total_payment))
 
 
@@ -44,7 +47,8 @@ print(student_can_enroll)
 # A product offer can be applied only if people buys more than 2 items, 
 # and the offer has not expired. Premium members do not need to buy a specific amount of products.
 
-bought_more_than_2_items = False
+items_bought = 1
+bought_more_than_2_items = items_bought >= 2
 offer_has_not_expired = True
 is_a_premium_member = True
 can_apply_product_offer = (is_a_premium_member or bought_more_than_2_items) and offer_has_not_expired
@@ -63,6 +67,6 @@ password = 'notastrongpassword'
 # bonus neither the username or password can start or end with whitespace
 
 is_at_least_5_characters = len(password) >= 5
-is_less_than_21_characters = len(password) <= 20
+is_less_than_21_characters = len(username) <= 20
 is_not_same_as_username = password != username
 not_start_or_end_with_whitespace = username == username.strip() and password == password.strip()
