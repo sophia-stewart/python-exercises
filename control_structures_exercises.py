@@ -72,6 +72,21 @@ while i >= 5:
 #   b. For Loops
 #     i. Write some code that prompts the user for a number, 
 #       then shows a multiplication table up through 10 for that number.
+n = int(input('Please enter a number:'))
+for i in range(1, 11):
+    print(n, 'x', i, '=', (n*i))
 
 #     ii. Create a for loop that uses print to create the output shown below.
+for i in range(1, 10):
+    print(i*str(i))
 
+#   c. break and continue
+#     i. Prompt the user for an odd number between 1 and 50.
+#        Use a loop and a break statement to continue prompting the user if they enter invalid input. 
+#        (Hint: use the isdigit method on strings to determine this).
+#        Use a loop and the continue statement to output all the odd numbers between 1 and 50, 
+#        except for the number the user entered.
+user_num_input = input('Please enter an odd number between 1 and 50:')
+while user_num_input.isdigit() != True:
+    print('Invalid input')
+    user_num_input = input('Please enter an odd number between 1 and 50:')
