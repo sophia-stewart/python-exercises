@@ -106,9 +106,9 @@ for i in range(1, 51):
 
 # The input function can be used to prompt for input and use that input in your python code. 
 
-# Prompt the user to enter a positive number and write a loop that counts from 0 to that number. 
-# (Hints: first make sure that the value the user entered is a valid number, 
-# also note that the input function returns a string, so you'll need to convert this to a numeric type.)
+#   d. Prompt the user to enter a positive number and write a loop that counts from 0 to that number. 
+#      (Hints: first make sure that the value the user entered is a valid number, 
+#      also note that the input function returns a string, so you'll need to convert this to a numeric type.)
 user_pos_input = input('Please enter a number between 1 and 50: ')
 while True:
     if user_pos_input.isdigit() != True:
@@ -128,5 +128,19 @@ for n in range(-1, int(user_pos_input)):
     print(n)
 
 
-# Write a program that prompts the user for a positive integer. 
-# Next write a loop that prints out the numbers from the number the user entered down to 1.
+#   e. Write a program that prompts the user for a positive integer. 
+#      Next write a loop that prints out the numbers from the number the user entered down to 1.
+user_pos_input = input('Please enter a positive integer: ')
+while True:
+    if user_pos_input.isdigit() != True:
+        print('Invalid input')
+        user_pos_input = input('Please enter a positive integer: ')
+        continue
+    elif int(user_pos_input) <= 0:
+        print('Invalid input')
+        user_pos_input = input('Please enter a positive integer: ')
+    else:
+        break
+for n in range(0, int(user_pos_input)):
+    n = int(user_pos_input) - n
+    print(n)
