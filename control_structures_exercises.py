@@ -236,3 +236,28 @@ while cont_input.upper() == 'Y':
         else:
             print('A')
         break
+
+# 6. Create a list of dictionaries where each dictionary represents a book that you have read.
+#    Each dictionary in the list should have the keys title, author, and genre.
+#    Loop through the list and print out information about each book.
+#   - Prompt the user to enter a genre, then loop through your books list and 
+#     print out the titles of all the books in that genre.
+book1 = dict(title = 'The Hitchhiker\'s Guide to the Galaxy', 
+             author = 'Douglas Adams', 
+             genre = ['science fiction', 'comedy'])
+book2 = dict(title = 'Wuthering Heights',
+             author = 'Emily Bronte',
+             genre = ['romance', 'tragedy'])
+book3 = dict(title = 'Dracula',
+             author = 'Bram Stoker',
+             genre = ['horror', 'gothic fiction'])
+book4 = dict(title = 'Frankenstein',
+             author = 'Mary Shelley',
+             genre = ['horror', 'science fiction', 'gothic fiction', 'tragedy'])
+fiction_books = [book1, book2, book3, book4]
+for book in fiction_books:
+    print('Title: ',book['title'], '\nAuthor: ',book['author'], '\nGenres: ',book['genre'],'\n')
+print()
+genre_input = input('Please enter a book genre: ')
+titles = [book['title'] for book in fiction_books if genre_input.lower() in book['genre']]
+print(f'{genre_input.title()} book(s):', titles)
