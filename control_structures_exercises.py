@@ -96,11 +96,14 @@ while True:
         print('Invalid input')
         user_num_input = input('Please enter an odd number between 1 and 50:')
     else: break
+print()
+print('The number to skip is:',user_num_input)
+print()
 for i in range(1, 51):
     if i % 2 == 0:
         continue
     elif i == int(user_num_input):
-        continue
+        print('Yikes! Skipping this number:', i)
     else:
         print('Here is an odd number:', i)
 
@@ -175,9 +178,10 @@ sq_input = input('Please enter an integer: ')
 y_n_input = input('Would you like to see its powers? y/n ')
 if y_n_input.lower() == 'y':
     print('\nHere they are!\n')
-    print(f'Number\tSquare\tCube')
+    print(f'Number|\tSquare|\tCube')
+    print(f'------|\t------|\t----')
     for n in range(1, int(sq_input) + 1):
-        print(f'{n:2}\t{(n ** 2):3}\t{(n ** 3):4}')
+        print(f'{n:6}|\t{(n ** 2):6}|\t{(n ** 3):4}')
 
 # 5. Convert given number grades into letter grades.
 #   - Prompt the user for a numerical grade from 0 to 100.
