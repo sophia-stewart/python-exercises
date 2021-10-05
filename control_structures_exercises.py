@@ -144,3 +144,37 @@ while True:
 for n in range(0, int(user_pos_input)):
     n = int(user_pos_input) - n
     print(n)
+
+# 3. Fizzbuzz
+
+# One of the most common interview questions for entry-level programmers is the FizzBuzz test. 
+# Developed by Imran Ghory, the test is designed to test basic looping and conditional logic skills.
+
+# Write a program that prints the numbers from 1 to 100.
+# For multiples of three print "Fizz" instead of the number
+# For the multiples of five print "Buzz".
+# For numbers which are multiples of both three and five print "FizzBuzz".
+
+for n in range(1, 101):
+    if n % 3 == 0 and n % 5 == 0:
+        print('FizzBuzz')
+    elif n % 3 == 0:
+        print('Fizz')
+    elif n % 5 == 0:
+        print('Buzz')
+    else:
+        print(n)
+
+# 4. Display a table of powers.
+#   - Prompt the user to enter an integer.
+#   - Display a table of squares and cubes from 1 to the value entered.
+#   - Ask if the user wants to continue.
+#   - Assume that the user will enter valid data.
+#   - Only continue if the user agrees to.
+sq_input = input('Please enter an integer: ')
+y_n_input = input('Would you like to see its powers? y/n ')
+if y_n_input.lower() == 'y':
+    print('\nHere they are!\n')
+    print(f'Number\tSquare\tCube')
+    for n in range(1, int(sq_input) + 1):
+        print(f'{n:2}\t{(n ** 2):3}\t{(n ** 3):4}')
