@@ -178,3 +178,61 @@ if y_n_input.lower() == 'y':
     print(f'Number\tSquare\tCube')
     for n in range(1, int(sq_input) + 1):
         print(f'{n:2}\t{(n ** 2):3}\t{(n ** 3):4}')
+
+# 5. Convert given number grades into letter grades.
+#   - Prompt the user for a numerical grade from 0 to 100.
+#   - Display the corresponding letter grade.
+#   - Prompt the user to continue.
+#   - Assume that the user will enter valid integers for the grades.
+#   - The application should only continue if the user agrees to.
+#   - Grade Ranges:
+#     - A : 100 - 88
+#     - B : 87 - 80
+#     - C : 79 - 67
+#     - D : 66 - 60
+#     - F : 59 - 0
+#   Bonus: Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+).
+
+grade_input = input('Please enter a grade (0-100)')
+cont_input = input('Would you like to continue? Y/N ')
+while cont_input.upper() == 'Y':
+    if int(grade_input) in range(0, 60):
+        if int(grade_input) in range(0, 2):
+            print('F-')
+        elif int(grade_input) in range(58,60):
+            print('F+')
+        else:
+            print('F')
+        break
+    elif int(grade_input) in range(60, 67):
+        if int(grade_input) in range(60, 62):
+            print('D-')
+        elif int(grade_input) in range(65,67):
+            print('D+')
+        else:
+            print('D')
+        break
+    elif int(grade_input) in range(67, 80):
+        if int(grade_input) in range(67, 69):
+            print('C-')
+        elif int(grade_input) in range(78,80):
+            print('C+')
+        else:
+            print('C')
+        break
+    elif int(grade_input) in range(80, 88):
+        if int(grade_input) in range(80, 82):
+            print('B-')
+        elif int(grade_input) in range(86,88):
+            print('B+')
+        else:
+            print('B')
+        break
+    else:
+        if int(grade_input) in range(88, 90):
+            print('A-')
+        elif int(grade_input) in range(99,101):
+            print('A+')
+        else:
+            print('A')
+        break
