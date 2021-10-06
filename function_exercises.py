@@ -98,7 +98,13 @@ get_letter_grade(27)
 
 # 9. Define a function named remove_vowels 
 #    that accepts a string and returns a string with all the vowels removed.
-
+def remove_vowels(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    no_vowel_list = [letter for letter in string if letter.lower() not in vowels]
+    return ''.join(no_vowel_list)
+remove_vowels('banana')
+remove_vowels('Codeup')
+remove_vowels('mandarin orange')
 
 # 10. Define a function named normalize_name. 
 #     It should accept a string and return a valid python identifier, that is:
@@ -110,9 +116,30 @@ get_letter_grade(27)
 #       - Name will become name
 #       - First Name will become first_name
 #       - % Completed will become completed
-
+def normalize_name(string):
+    new_string = string.strip().replace(' ', '_').lower()
+    listed = [letter for letter in new_string if letter.isalpha() or letter.isdigit() or letter == '_']
+    newer_string = ''.join(listed)
+    while newer_string[0].isalpha() == False:
+        newest_string = newer_string.replace(newer_string[0], '')
+        return newest_string
+    else:
+        return newer_string
+print(normalize_name('Name'))
+print(normalize_name('First Name'))
+print(normalize_name('% Completed'))
 
 # 11. Write a function named cumulative_sum that 
 #     accepts a list of numbers and returns a list that is the cumulative sum of the numbers in the list.
 #     - cumulative_sum([1, 1, 1]) returns [1, 2, 3]
 #     - cumulative_sum([1, 2, 3, 4]) returns [1, 3, 6, 10]
+def cumulative_sum(list):
+    s = 0
+    cumulative_list = []
+    for i in list:
+        s = s + i
+        cumulative_list.append(s)
+    return cumulative_list
+cumulative_sum([1, 1, 1])
+cumulative_sum([1, 2, 3])
+cumulative_sum([2, 4, 6])
