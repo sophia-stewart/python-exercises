@@ -116,18 +116,22 @@ remove_vowels('mandarin orange')
 #       - Name will become name
 #       - First Name will become first_name
 #       - % Completed will become completed
+import keyword
 def normalize_name(string):
-    new_string = string.strip().replace(' ', '_').lower()
+    new_string = string.strip().replace(' ', '_')
     listed = [letter for letter in new_string if letter.isalpha() or letter.isdigit() or letter == '_']
     newer_string = ''.join(listed)
     while newer_string[0].isalpha() == False:
-        newest_string = newer_string.replace(newer_string[0], '')
-        return newest_string
+        newer_string = newer_string[1:]
+    if newer_string in keyword.kwlist:
+        return 'That is a python keyword, please try again!'
     else:
-        return newer_string
+        return newer_string.lower()
 print(normalize_name('Name'))
 print(normalize_name('First Name'))
 print(normalize_name('% Completed'))
+print(normalize_name('  123 hello to you '))
+print(normalize_name('% 96False '))
 
 # 11. Write a function named cumulative_sum that 
 #     accepts a list of numbers and returns a list that is the cumulative sum of the numbers in the list.
